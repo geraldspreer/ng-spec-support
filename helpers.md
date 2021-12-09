@@ -8,3 +8,11 @@ const changeSelectInputTo = (selector: string, index: number) => {
   };
 ```
 
+```
+const clickElement = (selector: string) => {
+    fixture.nativeElement.querySelector(selector).click();
+    fixture.detectChanges();
+};
+
+```
+
