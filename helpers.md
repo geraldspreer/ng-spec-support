@@ -1,5 +1,4 @@
-##Angular
-
+## Angular
 
 ```
 const changeSelectInputTo = (selector: string, index: number) => {
