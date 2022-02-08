@@ -16,5 +16,16 @@ const clickElement = (selector: string) => {
     fixture.detectChanges();
 };
 
+const hasElement = (selector: string) => {
+    expect(helper.findElement(selector))
+    .withContext(`${selector} should be visible`)
+    .not.toBeNull();
+  };
+
+const doesNotHaveElement = (selector: string) => {
+    expect(helper.findElement(selector))
+    .withContext(`${selector} should be visible`)
+    .toBeNull();
+  };
 ```
 
