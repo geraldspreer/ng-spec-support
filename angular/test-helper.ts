@@ -13,7 +13,7 @@ export class TestHelper<T> {
   public findElement(selector: string): HTMLElement {
     return this.fixture.nativeElement.querySelector(selector);
   }
-  
+
   public clickElement(selector: string) {
     this.debug.nativeElement.querySelector(selector).click();
     this.fixture.detectChanges();
@@ -30,7 +30,7 @@ export class TestHelper<T> {
     selectInput.value = selectInput.options[index].value;
     selectInput.dispatchEvent(new Event("change"));
   }
-  
+
   public hasElement = (selector: string) {
     return expect(helper.findElement(selector))
     .withContext(`${selector} should be visible`)
@@ -42,5 +42,4 @@ export class TestHelper<T> {
     .withContext(`${selector} should not be visible`)
     .toBeNull();
   };
-
 }
