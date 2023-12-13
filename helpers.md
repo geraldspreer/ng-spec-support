@@ -27,5 +27,30 @@ const doesNotHaveElement = (selector: string) => {
     .withContext(`${selector} should be visible`)
     .toBeNull();
   };
+
+const addFontAwesome = () => {
+    const firstDiv = this.findElement('div');
+    const fontAwesome = document.createElement('script');
+    fontAwesome.src = 'https://kit.fontawesome.com/{kit-id}.js';
+    firstDiv.appendChild(fontAwesome);
+  }
+
+const addBootstrap = () => {
+    const firstDiv = this.findElement('div');
+    const bootstrapLink = document.createElement('link');
+    bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css';
+    bootstrapLink.rel = 'stylesheet';
+    firstDiv.appendChild(bootstrapLink);
+  }
+
+const scrollToBottomAfter = (time: number) => {
+    setTimeout(function() {
+      const scrollToBottom = document.documentElement.scrollHeight - window.innerHeight;
+      window.scrollTo({
+        top: scrollToBottom,
+        behavior: 'smooth'
+      });
+    }, time);
+  }
 ```
 
